@@ -18,6 +18,9 @@ module.exports = {
         blue: "#0984e3",
       },
     },
+    fontFamily: {
+      Montserrat: ["Montserrat", "sans-serif"],
+    },
   },
   plugins: [],
 };

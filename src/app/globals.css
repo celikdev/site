@@ -1,3 +1,5 @@
+ @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700;900&family=Montserrat:wght@700;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,7 +8,7 @@
 /* bg-gradient-to-bl from-purple-400 via-yellow via-70% to-orange */
 
 body{
-  @apply bg-primary overflow-hidden
+  @apply bg-primary overflow-hidden font-Montserrat 
 }
 
 
