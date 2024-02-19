@@ -1,8 +1,6 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import Hakan from "./assets/Hakan.jpg";
-import LocationGif from "./assets/icons/location.gif";
 
 import Instagram from "./assets/icons/instagram.svg";
 import Twitter from "./assets/icons/twitter.svg";
@@ -11,6 +9,8 @@ import Github from "./assets/icons/github.svg";
 import Location from "./assets/icons/gummy-location.svg";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
+import { Education, Experience } from "@/components";
 
 export default function Home() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -46,8 +46,12 @@ export default function Home() {
     return () => clearInterval(interval);
   }, []);
 
+  const [openPortfolio, setOpenPortfolio] = useState(false);
+
+  const [selectedTab, setSelectedTab] = useState("EDU");
+
   return (
-    <main className="p-8 h-[100vh] gap-4 flex flex-col selection:bg-none">
+    <main className="p-8 h-[100vh] gap-4 flex flex-col selection:bg-none relative">
       <div className="flex w-full h-3/5 gap-4">
         <div className="w-3/5 h-full flex flex-col gap-4">
           <motion.div
@@ -76,7 +80,7 @@ export default function Home() {
           >
             <div className="w-1/3 bg-shy flex justify-center items-center shadow-inner rounded-2xl">
               <span className="font-extrabold text-xl text-center text-secondary ">
-                <h1 className="text-6xl">2+</h1>
+                <h1 className="text-6xl">3+</h1>
                 Years Experience
               </span>
             </div>
@@ -105,14 +109,28 @@ export default function Home() {
             <h1 className="font-bold text-lg text-tertiary">Hakan Çelik</h1>
           </motion.div>
           <div className="flex w-full h-full gap-4">
-            <div className="w-1/2 h-full bg-secondary flex justify-center items-center shadow-2xl rounded-2xl">
-              {/* <Image
-                src={Hakan}
-                priority={true}
-                alt="HakanImage"
-                width={300}
-                height={300}
-              /> */}
+            <div className="w-1/2 bg-secondary h-full flex flex-col shadow-2xl rounded-2xl p-2 gap-2">
+              <div className="tabs">
+                <input
+                  type="radio"
+                  id="html"
+                  name="fav_language"
+                  value="EDU"
+                  onChange={(e) => setSelectedTab(e.target.value)}
+                  checked={selectedTab === "EDU"}
+                />
+                <label htmlFor="html">Education</label>
+                <input
+                  type="radio"
+                  id="css"
+                  name="fav_language"
+                  value="EXP"
+                  onChange={(e) => setSelectedTab(e.target.value)}
+                  checked={selectedTab === "EXP"}
+                />
+                <label htmlFor="css">Experience</label>
+              </div>
+              {selectedTab === "EDU" ? <Education /> : <Experience />}
             </div>
             <div className="w-3/5 h-full flex flex-col gap-4">
               <div className="w-full h-1/6 bg-secondary flex justify-center items-center shadow-2xl rounded-2xl">
@@ -159,15 +177,21 @@ export default function Home() {
       </div>
       <div className="h-2/5 flex gap-4">
         <motion.div
+          // Portfolio
           initial={{ y: 50 }}
           animate={{ y: 0 }}
-          className="w-3/5 h-full bg-secondary flex flex-col gap-4 justify-start items-start p-10 shadow-2xl rounded-2xl"
+          className={`${
+            openPortfolio ? "w-3/5" : "w-3/5"
+          } h-full bg-secondary flex flex-col gap-4 justify-start items-start p-10 shadow-2xl rounded-2xl`}
         >
           <span className="flex justify-between w-full">
             <h1 className="font-extrabold text-3xl text-tertiary">
               Portofolio
             </h1>
-            <button className="font-light hover:text-white hover:opacity-100  transition-all duration-300 text-3xl text-tertiary opacity-50">
+            <button
+              onClick={() => setOpenPortfolio(true)}
+              className=" font-light hover:text-white hover:opacity-100  transition-all duration-300 text-3xl text-tertiary opacity-50"
+            >
               See All
             </button>
           </span>
@@ -178,9 +202,10 @@ export default function Home() {
           </div>
         </motion.div>
         <motion.div
+          // About
           initial={{ x: 50 }}
           animate={{ x: 0 }}
-          className="w-2/5 h-full  bg-secondary flex flex-col gap-4 justify-start items-start p-10 shadow-2xl rounded-2xl"
+          className={`w-2/5 h-full  bg-secondary flex flex-col gap-4 justify-start items-start p-10 shadow-2xl rounded-2xl`}
         >
           <span className="flex justify-between w-full">
             <h1 className="font-extrabold text-3xl text-tertiary">About</h1>
@@ -189,7 +214,12 @@ export default function Home() {
             </h1>
           </span>
           <p className="text-tertiary font-medium opacity-50">
-            Merhaba ben Hakan.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id
+            nunc placerat, placerat turpis blandit, mattis nunc. Nullam
+            condimentum et dui in iaculis. Ut et aliquet turpis. Aliquam odio
+            ante, gravida iaculis ligula sed, posuere gravida metus. Quisque leo
+            est, convallis a justo id, molestie iaculis lorem. Vestibulum vel
+            pharetra mi. Quisque eu ultricies erat.
           </p>
         </motion.div>
       </div>
