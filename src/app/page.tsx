@@ -92,7 +92,7 @@ export default function Home() {
               </span>
             </div>
 
-            <div className="w-1/3 bg-blue flex justify-center items-center shadow-inner rounded-2xl">
+            <div className="w-1/3 bg-customBlue flex justify-center items-center shadow-inner rounded-2xl">
               <span className="font-extrabold text-xl text-center text-secondary">
                 <h1 className="text-6xl">650+</h1>
                 GitHub Commits
