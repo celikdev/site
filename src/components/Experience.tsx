@@ -1,8 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-import Dot from "../app/assets/icons/dot.svg";
-
 const Experience = () => {
   const experienceData = [
     {
