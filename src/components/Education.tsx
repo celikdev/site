@@ -4,15 +4,14 @@ import { motion } from "framer-motion";
 const Education = () => {
   const educationData = [
     {
-      title: "Associate Degree in Electronic Communication",
-      location: "Istanbul University - Cerrahpasa",
-      dateAndLocation: "2021 - 2023 / Istanbul",
+      title: "Elektronik Haberleşme - Önlisans",
+      location: "İstanbul Üniversitesi - Cerrahpaşa",
+      dateAndLocation: "2021 - 2023 / İstanbul",
     },
     {
-      title: "Electronics and Security Systems in High School",
-      location:
-        "IMMIB Erkan Avci Vocational and Technical Anatolian High School",
-      dateAndLocation: "2017 - 2021 / Istanbul",
+      title: "Yangın Alarm ve Güvenlik Sistemleri - Elektronik",
+      location: "İMMİB Erkan Avcı Mesleki ve Teknik Anadolu Lisesi",
+      dateAndLocation: "2017 - 2021 / İstanbul",
     },
   ];
   return (

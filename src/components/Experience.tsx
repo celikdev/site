@@ -4,24 +4,24 @@ import { motion } from "framer-motion";
 const Experience = () => {
   const experienceData = [
     {
-      companyName: "RouteWise",
-      title: "Co-Founder",
-      dateAndLocation: "Jan 2020 - Present / Istanbul",
+      companyName: "Baykar Technologies",
+      title: "Stajyer",
+      dateAndLocation: "Mart 2025 - Halen / Istanbul",
     },
     {
-      companyName: "Pooly",
-      title: "Full Stack Developer",
-      dateAndLocation: "Jan 2020 - Present / Istanbul",
+      companyName: "Bulut Yönetim",
+      title: "AR-GE Teknikeri",
+      dateAndLocation: "Haziran 2024 - 2025 / Istanbul",
     },
     {
-      companyName: "BAYKAR Technologies",
-      title: "Summer Intern",
-      dateAndLocation: "Jan 2020 - Present / Istanbul",
+      companyName: "APTI",
+      title: "Elektronik Teknikeri",
+      dateAndLocation: "Mart 2023 - 2024 / Istanbul",
     },
     {
-      companyName: "Randevum",
-      title: "Full Stack Developer",
-      dateAndLocation: "Jan 2020 - Present / Istanbul",
+      companyName: "İhlas Marmara Evleri",
+      title: "Elektronik Teknikeri",
+      dateAndLocation: "Haziran 2021 - 2023 / Istanbul",
     },
   ];
   return (
